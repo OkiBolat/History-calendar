@@ -1,10 +1,14 @@
+* {
+  box-sizing:border-box;
+}
 .App {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 9999;
+  max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+  background: #E5E5E5;;
+  overflow: hidden;
+}
+
+.container {
+  padding: 157px 80px 80px 80px;
 }

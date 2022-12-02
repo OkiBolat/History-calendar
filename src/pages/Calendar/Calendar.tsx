@@ -2,7 +2,6 @@ import { useState } from "react";
 import Header from "../../components/Header/";
 import Main from "./Main";
 import Footer from "./Footer";
-import { Container } from "./styled";
 import { useSelector } from "react-redux";
 
 const Calendar = () => {
@@ -23,7 +22,7 @@ const Calendar = () => {
   };
 
   return (
-    <Container>
+    <>
       <Header />
       <Main
         totalCount={totalCount}
@@ -35,7 +34,7 @@ const Calendar = () => {
         currentGap={currentGap}
         setCurrentGap={onSelectGap}
         events={currentEvents} />
-    </Container>
+    </>
   )
 };
 

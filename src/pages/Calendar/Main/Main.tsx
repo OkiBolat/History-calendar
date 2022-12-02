@@ -1,7 +1,7 @@
 import React from 'react';
 import Eclipse from '../../../components/Eclipse';
 import Number from '../../../components/Number';
-import { Container, MainHeader } from './styled';
+import { Container, LineHorizontal, LineVertical, MainHeader } from './styled';
 
 interface IMainProps {
   children?: React.ReactNode;
@@ -14,6 +14,8 @@ const Main: React.FC<IMainProps> = ({ totalCount, dates, currentGap, setCurrentG
   return (
     <>
       <Container>
+        <LineVertical />
+        <LineHorizontal />
         <MainHeader>
           <Number number={dates[0]} />
           <Number number={dates[1]} />

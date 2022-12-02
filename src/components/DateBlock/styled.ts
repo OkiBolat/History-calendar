@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 320px;
-  padding: 0 50px;
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 `
 
 export const Year = styled.div`
-  // width: 41px;
-  // height: 30px;
   font-style: normal;
   font-family: 'Bebas Neue';
   font-weight: 400;

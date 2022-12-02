@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { device } from '../../assets/styles';
 interface CircleProps {
   rot: any
 }
@@ -9,13 +10,6 @@ interface StatProps {
   active: boolean;
 }
 
-export const Container = styled.div`
-  position: relative;
-  bottom: 150px;
-  left: 21px;
-`;
-
-
 export const Circle = styled.div<CircleProps>`
     display: grid;
     grid-template-areas: "layer";
@@ -23,16 +17,16 @@ export const Circle = styled.div<CircleProps>`
     border: 1px solid #00000038;
     background: transparent;
     border-radius: 50%;
-    --radius: 280px;
+    --radius: 268px;
     width: calc(2 * var(--radius));
     height: calc(2 * var(--radius));
-
     & .stat {
     --r-offset: -${(props: any) => props.rot}deg;
     }
+    @media (${device.laptop}) {
+      display:none;
+     }
 `
-
-
 export const Stat = styled.div<StatProps>`
   background: #42567A;
   cursor: pointer;

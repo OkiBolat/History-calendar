@@ -1,12 +1,11 @@
+import { device } from './../../assets/styles';
 import styled from 'styled-components';
 
 export const Wrp = styled.div`
-    font-family: 'PT Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 200px;
-    line-height: 160px;
-    text-align: center;
-    letter-spacing: -0.02em;
-    color: #5D5FEF;
+    @media ${device.laptop} {
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 72px;
+        color: #3877EE;
+      }
 `

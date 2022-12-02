@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRef, useEffect, useState } from "react";
-import { Circle, Container, Stat } from './styled';
+import { Circle, Stat } from './styled';
 
 const addRotValues = (count: number) => {
   const obj:any = {}
@@ -40,7 +40,6 @@ const Eclipse: React.FC<IEclipseProps> = ({ currentGap, totalCount, setCurrentGa
 
   return (
     <>
-      <Container ref={container}>
         <Circle
           rot={rotatin}
           className="circle"
@@ -59,7 +58,6 @@ const Eclipse: React.FC<IEclipseProps> = ({ currentGap, totalCount, setCurrentGa
             </Stat>
           ))}
         </Circle>
-      </Container>
     </>
   )
 };

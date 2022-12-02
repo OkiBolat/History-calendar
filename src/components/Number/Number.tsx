@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { TweenLite } from "gsap";
-import { Wrp } from './styled';
 
 interface INumberProps {
   number: number;
@@ -22,7 +21,7 @@ const Number: React.FC<INumberProps> = props => {
     });
   }, [props.number]);
   return (
-    <Wrp>{total}</Wrp>
+    <>{total}</>
   );
 };
 

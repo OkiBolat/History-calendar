@@ -1,8 +1,11 @@
 import styled from 'styled-components';
-
+import { device } from '../../../assets/styles';
 
 export const Container = styled.div` 
-  // min-width: 100%;
-  padding: 0 80px
+  .swiper {
+    margin-top: 57px;
+  }
+  @media ${device.laptop} {
+  }
 `
 
