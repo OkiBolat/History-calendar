@@ -1,0 +1,47 @@
+
+.item {
+  cursor: pointer;
+  animation: none;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item:hover {
+  transform: scale(2);
+}
+.active {
+  width: 30px;
+  height: 30px;
+}
+._6 {
+  top: 8%;
+    left: 20%;
+  right: "";
+}
+._1 {
+  top: 5.9%;
+  left: 74%;
+  right: "";
+}
+._2 {
+  bottom: 50%;
+  left: 99%;
+}
+._3 {
+  bottom: 5%;
+  left: 72%;
+  right: "";
+}
+._4 {
+  bottom: 6%;
+  left: "";
+  right: 74%;
+}
+
+._5 {
+  top: 48%;
+  right: 99%;
+}
