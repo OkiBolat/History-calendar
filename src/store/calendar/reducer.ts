@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { createSlice } from "@reduxjs/toolkit";
-// import { getCardsThunk, getDetailedCardThunk, switchCardFavoriteThunk } from "./actionCreators";
 
 const toolkitSlice = createSlice({
   name: "calendar",
@@ -91,26 +90,6 @@ const toolkitSlice = createSlice({
     getGaps(state: any, action: any) {
     },
   },
-  // extraReducers: {
-  //   [getCardsThunk.pending]: (state: any) => {
-  //     state.requestInProgress = true
-  //   },
-  //   [getCardsThunk.fulfilled]: (state: any, action: any) => {
-  //     state.cards = action.payload;
-  //     state.filteredCards = action.payload;
-  //     state.requestInProgress = false
-  //   },
-  //   [getCardsThunk.rejected]: () => {
-  //     console.error("Not response")
-  //   },
-  //   [getDetailedCardThunk.fulfilled]: (state: any, action: any) => {
-  //     state.detailedCard = action.payload
-  //   },
-  //   [switchCardFavoriteThunk.fulfilled]: (state: any, action: any) => {
-  //     state.cards = state.cards.map((item: any) => item.id === action.payload.id ? action.payload : item)
-  //     state.filteredCards = state.filteredCards.map((item: any) => item.id === action.payload.id ? action.payload : item)
-  //   }
-  // }
 })
 
 export default toolkitSlice.reducer;

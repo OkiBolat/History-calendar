@@ -1,99 +1,67 @@
 import React from 'react';
 import { useRef, useEffect, useState } from "react";
-import styled, { css } from "styled-components";
-import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Container, Item, Section } from './styled';
-import "./styles.css";
+import { Circle, Container, Stat } from './styled';
+
+const addRotValues = (count: number) => {
+  const obj:any = {}
+  let akk = 120
+  const grap = 360 / count
+  for (let i = 1; i <= count; i++) {
+    obj[i] = {
+      rot: akk,
+      position: i,
+    }
+    akk += grap
+  }
+  return obj
+};
 
 interface IEclipseProps {
   currentGap: number;
-  setCurrentGap: any
-}
-gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+  totalCount: number;
+  setCurrentGap: any;
+};
 
-const Eclipse: React.FC<IEclipseProps> = ({ currentGap, setCurrentGap }) => {
-  const [values, setValues] = useState({
-    6: {
-      position: 6,
-      active: true,
-      rot: -300
-    },
-    1: {
-      position: 1,
-      active: false,
-      rot: 0
-    },
-    2: {
-      position: 2,
-      active: false,
-      rot: -60
-    },
-    3: {
-      position: 3,
-      active: false,
-      rot: -120
-    },
-    4: {
-      position: 4,
-      active: false,
-      rot: -180
-    },
-    5: {
-      position: 5,
-      active: false,
-      rot: -240
-    }
-  });
+const Eclipse: React.FC<IEclipseProps> = ({ currentGap, totalCount, setCurrentGap }) => {
+  const [values, setValues] = useState<Record<string, any>>(addRotValues(totalCount));
 
+  const [rotatin, setRotation] = useState(0)
   const section1 = useRef(null);
-  const item = useRef(null);
   const container = useRef(null);
 
-  const rotateFunction = (val:any) => {
-    setCurrentGap(val.position)
-    gsap.to(section1.current, {
-      rotation: val.rot,
-      ease: "none",
-      duration: 1,
-      transformOrigin: "center center",
-      motionPath: {}
-    });
-
-  };
-
   useEffect(() => {
-    rotateFunction(values[currentGap]);
-  }, [currentGap]);
+    setRotation(values[currentGap].rot)
+  }, [currentGap, totalCount]);
+
+  const onRotate = (val: any) => {
+    setCurrentGap(val.position)
+    setRotation(val.rot)
+  };
 
   return (
     <>
       <Container ref={container}>
-        <Section
-          className="section"
+        <Circle
+          rot={rotatin}
+          className="circle"
           ref={section1}
         >
-          {Object.values(values).map((k) => (
-            <Item
-              ref={item}
-              rotate={k.rot}
+          {Object.values(values).map((k: any) => (
+            <Stat
               active={currentGap === k.position}
-              onClick={() => rotateFunction(k)}
-              className={`_${k.position} ${currentGap === k.position && "active"
-                }`}
+              className={`stat`}
+              onClick={() => onRotate(k)}
+              i={k.position}
+              key={k.position}
+              total={Object.values(values).length}
             >
-              <p>
-                <text>{k.position}</text>
-              </p>
-            </Item>
+              {k.position}
+            </Stat>
           ))}
-        </Section>
+        </Circle>
       </Container>
     </>
-  );
-}
+  )
+};
 
 export default Eclipse;
-
-

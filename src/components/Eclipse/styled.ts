@@ -1,66 +1,75 @@
 import styled, { css } from 'styled-components';
+interface CircleProps {
+  rot: any
+}
+
+interface StatProps {
+  i: any;
+  total: any;
+  active: boolean;
+}
 
 export const Container = styled.div`
   position: relative;
-  margin-top: -212px;
-    left: 21px;
-  // /* scroll-snap-type: mandatory;
-  // scroll-snap-points-y: repeat(100vh);
-  // scroll-snap-type: y mandatory; */
+  bottom: 150px;
+  left: 21px;
 `;
 
-export const Section = styled.div`
+
+export const Circle = styled.div<CircleProps>`
+    display: grid;
+    grid-template-areas: "layer";
+    place-items: center;
+    border: 1px solid #00000038;
+    background: transparent;
+    border-radius: 50%;
+    --radius: 280px;
+    width: calc(2 * var(--radius));
+    height: calc(2 * var(--radius));
+
+    & .stat {
+    --r-offset: -${(props: any) => props.rot}deg;
+    }
+`
+
+
+export const Stat = styled.div<StatProps>`
+  background: #42567A;
+  cursor: pointer;
+  grid-area: layer;
+  width: 3px;
+  height: 3px;
   border: 1px solid #00000038;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 530px;
-  width: 530px;
   border-radius: 50%;
-  margin: 40px auto;
-  scroll-snap-align: start;
-`;
-interface ItemProps {
-  active: boolean;
-  rotate: number;
+  display: grid;
+  place-items: center;
+
+  background: #;
+  color: #000000;
+  font-weight: bold;
+  font-size: 0px;
+${(props) => css`
+  --i: ${props.i};
+  --total: ${props.total};
+  --d: calc(var(--i) / var(--total));
+  --r-offset: 0turn;
+  --r-amount: 1turn;
+  --r: calc((var(--r-amount) * var(--d)) + var(--r-offset));
+  --transform: rotate(var(--r)) translate(var(--radius))
+    rotate(calc(-1 * var(--r)));
+    transform: var(--transform);
+    transition-duration: 1s;
+`};
+${props => props.active && css`
+  font-size: 18px;
+  background: #F4F5F9;
+  width: 50px;
+  height: 50px;
+`}
+&:hover {
+  font-size: 12px;
+  background: #F4F5F9;
+  width: 50px;
+  height: 50px;
 }
-
-export const Item = styled.div<ItemProps>`
-cursor: pointer;
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  p {
-  transition: all 0.3s;
-    border: 1px solid rgba(48, 62, 88, 0.5);
-    min-width: 56px;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 56px;
-    transform: scale(0.1);
-    background: black;
-  }
-  p:hover {
-    transform: scale(1);
-    background: #f4f5f9;
-  }
-  ${props => css`
-      transform: rotate(${Math.abs(props.rotate)}deg)
-    `
-
-  };
-  p {
-    ${(props) =>
-    props.active &&
-    css`
-    transform: scale(1);
-    background: #f4f5f9;
-
-    `}
 `

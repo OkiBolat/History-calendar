@@ -1,30 +1,42 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Header from "../../components/Header/";
-import { Container, Line, LineHorizontal } from "./styled";
 import Main from "./Main";
 import Footer from "./Footer";
+import { Container } from "./styled";
 import { useSelector } from "react-redux";
 
-export const Calendar = () => {
-  const [currentGap, setCurrentGap] = useState(1)
-  const gaps = useSelector((store: any) => store.calendar.gapsInHistory)
+const Calendar = () => {
+  const [currentGap, setCurrentGap] = useState(1);
+  const gaps = useSelector((store: any) => store.calendar.gapsInHistory);
 
-  const onSelectGap = (gap: number) => {
+  const totalCount = Object.keys(gaps).length,
+    currentDates = gaps[currentGap].dates,
+    currentEvents = gaps[currentGap].events;
+
+  function onSelectGap(gap: number) {
     if (gap === 0) {
       return
-    } else if (gap > 6) {
+    } else if (gap > totalCount) {
       return
     }
     setCurrentGap(gap)
-  }
+  };
 
   return (
     <Container>
-      <Line />
-      <LineHorizontal />
       <Header />
-      <Main dates={gaps[currentGap].dates} currentGap={currentGap} setCurrentGap={onSelectGap} />
-      <Footer events={gaps[currentGap].events}/>
+      <Main
+        totalCount={totalCount}
+        dates={currentDates}
+        currentGap={currentGap}
+        setCurrentGap={onSelectGap} />
+      <Footer
+        total={totalCount}
+        currentGap={currentGap}
+        setCurrentGap={onSelectGap}
+        events={currentEvents} />
     </Container>
   )
-}
+};
+
+export default Calendar;

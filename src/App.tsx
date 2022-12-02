@@ -1,14 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
+import Calendar from './pages/Calendar/Calendar';
 import './App.css';
-import { Calendar } from './pages/Calendar/Calendar';
+import { Line, LineHorizontal } from './pages/Calendar/styled';
 
 function App() {
   return (
     <div className="App">
-      <Calendar/>
+      <Line />
+      <LineHorizontal />
+      <Calendar />
     </div>
   );
-}
+};
 
 export default App;

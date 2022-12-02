@@ -24,7 +24,7 @@
   "include": [
     "src"
   ],
-    "extends": ["@parcel/config-default"],
+    "extends": "@parcel/config-default",
     "resolvers": ["...", "@parcel/resolver-glob"],
     "transformers": {
         "*.svg": ["...", "@parcel/transformer-svg-react", "@parcel/transformer-typescript-tsc"]

@@ -3,7 +3,6 @@ import PagingBtn from '../PagingBtn';
 import { Container, Counter } from './styled';
 
 interface IPagingProps {
-  children?: React.ReactNode;
   count: number;
   currentGap: number;
   setCurrentGap: any;

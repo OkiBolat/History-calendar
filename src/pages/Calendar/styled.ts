@@ -4,18 +4,13 @@ export const Container = styled.div`
   display: flex;
   border-left: 1px solid;
   border-right: 1px solid;
+  background:transparent;
   border-color: #d0d5df;
-
-  
   flex-direction: column;
-  justify-content: flex-end;
   position: relative;
   #E5E5E5;
-  max-width: 1400px;
-  min-height: 1000px;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
   @media (max-width: 768px) {
     flex-direction: column;
     max-width: 320px;
@@ -33,7 +28,7 @@ export const Container = styled.div`
     height: 300px;
   }
   
-`
+`;
 
 export const Line = styled.div`
 position: absolute;
@@ -42,13 +37,13 @@ width: 2px;
 background: #00000038;
 left: 51.5%;
 opacity: 0.5;
-`
+`;
+
 export const LineHorizontal = styled.div`
   position: absolute;
   min-width: 100%;
   height: 2px;
   background: #00000038;
-  top: 39%;
-opacity: 0.5;
-
-`
+  top: 45%;
+  opacity: 0.5;
+`;
