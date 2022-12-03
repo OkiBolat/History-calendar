@@ -3,11 +3,12 @@ import { TweenLite } from "gsap";
 
 interface INumberProps {
   number: number;
+  style? : any;
 }
-
 const myObject = {
   totalValue: 0
 };
+
 
 const Number: React.FC<INumberProps> = props => {
   const [total, setTotal] = useState(props.number);
@@ -21,7 +22,7 @@ const Number: React.FC<INumberProps> = props => {
     });
   }, [props.number]);
   return (
-    <>{total}</>
+    <span style={props.style}>{total}</span>
   );
 };
 

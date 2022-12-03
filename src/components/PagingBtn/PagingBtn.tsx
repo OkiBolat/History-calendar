@@ -4,17 +4,17 @@ import {Container, Icon} from './styled';
 interface IPagingBtnProps {
   forward: boolean;
   onClick: () => void;
-  currentGap: number;
+  isDisable: boolean;
 }
 
-const PagingBtn:React.FC<IPagingBtnProps> = ({currentGap , forward, onClick}) => {
+const PagingBtn:React.FC<IPagingBtnProps> = ({isDisable, forward, onClick}) => {
   return (
     <>
-    <Container onClick={onClick}>
+    <Container isDisable={isDisable} onClick={onClick}>
       <Icon forward={forward}/>
     </Container>
     </>
   );
-}
+};
 
 export default PagingBtn;

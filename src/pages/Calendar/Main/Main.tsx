@@ -18,7 +18,7 @@ const Main: React.FC<IMainProps> = ({ totalCount, dates, currentGap, setCurrentG
         <LineHorizontal />
         <MainHeader>
           <Number number={dates[0]} />
-          <Number number={dates[1]} />
+          <Number style={{color: "#EF5DA8"}}number={dates[1]} />
         </MainHeader>
         <Eclipse totalCount={totalCount} currentGap={currentGap} setCurrentGap={setCurrentGap} />
       </Container>

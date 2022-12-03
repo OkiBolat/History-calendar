@@ -8,7 +8,7 @@ position: relative;
   align-items: center;
   margin-top: -90px;
 @media ${device.laptop} {
-
+  width: 100%;
 }
   `;
 
@@ -23,26 +23,28 @@ export const MainHeader = styled.div`
     letter-spacing: -0.02em;
     color: #5D5FEF;
   @media ${device.laptop} {
-        top:0;
-        height: auto;
-        position: initial;
-        font-weight: 700;
-        font-size: 56px;
-        line-height: 72px;
-        color: #3877EE;
-        margin-bottom: -72px;
-        border-bottom: 1px solid;
+    position: relative;
+    padding: 80px 0;
+    position: initial;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 56px;
+    color: #3877EE;
+    border-bottom: 1px solid black;
+    width:100%;
   }
   `;
 
-  export const LineVertical = styled.div`
+export const LineVertical = styled.div`
   position: absolute;
   height: 100vw;
   width: 1px;
   left: 50%;
-  background: #42567A;
-@media ${device.laptop} {
-  display:none;
+  background: #00000038;
+    @media ${device.laptop} {
+      display:none;
 }
 `;
 
@@ -51,8 +53,8 @@ position: absolute;
 height: 1px;
 top: 50%;
 width: 100vw;
-background: #42567A;
-  @media ${device.laptop} {
-    display:none;
+background: #00000038;
+    @media ${device.laptop} {
+      display:none;
   }
 `;
