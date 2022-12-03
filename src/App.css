@@ -2,19 +2,6 @@
   box-sizing: border-box;
 }
 
-@media (max-width:1024px) {
-  .App {
-    background: #F4F5F9;
-  }
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:space-between;
-    padding: 59px 20px 20px 20px;
-    height: 100vh;
-  }
-}
 
 .App {
   max-width: 1440px;
@@ -28,4 +15,18 @@
 .container {
   padding: 157px 80px 80px 80px;
 
+}
+
+@media (max-width:1024px) {
+  .App {
+    background: #F4F5F9;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    padding: 59px 20px 20px 20px;
+    height: 100vh;
+  }
 }
