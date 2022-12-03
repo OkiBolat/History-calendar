@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/History-calendar/static/css/main.e674c793.css",
-    "main.js": "/History-calendar/static/js/main.8681f1de.js",
+    "main.css": "/History-calendar/static/css/main.ba9241e9.css",
+    "main.js": "/History-calendar/static/js/main.7b3b8620.js",
     "index.html": "/History-calendar/index.html",
     "static/media/paging.svg": "/History-calendar/static/media/paging.f992fd0b2072543913c8a35cb88259b1.svg",
-    "main.e674c793.css.map": "/History-calendar/static/css/main.e674c793.css.map",
-    "main.8681f1de.js.map": "/History-calendar/static/js/main.8681f1de.js.map"
+    "main.ba9241e9.css.map": "/History-calendar/static/css/main.ba9241e9.css.map",
+    "main.7b3b8620.js.map": "/History-calendar/static/js/main.7b3b8620.js.map"
   },
   "entrypoints": [
-    "static/css/main.e674c793.css",
-    "static/js/main.8681f1de.js"
+    "static/css/main.ba9241e9.css",
+    "static/js/main.7b3b8620.js"
   ]
 }
